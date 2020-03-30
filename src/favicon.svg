@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+    <style>
+        /* un carré de mosaique */
+        .tile { 
+            height: 5px;
+            width: 5px;
+            rx: 0.15;
+            ry: 0.15;
+            stroke: #DEDEDE;
+            stroke-width: 0.1;
+        }
+
+        /* contour du SI*/
+        .baround {
+            fill: #000000;
+        }
+
+        /* couleur du corps du SI */
+        .bfill { 
+            fill: #FFFFFF;
+        }
+
+        /* couleur des yeux du SI */
+        .eye {
+            fill: #FF0000;
+        }
+
+        /* couleur du contour du SI */
+        .bgshape { 
+            fill: #000000;
+        }
+
+        /* blanc si le SI prend toute la taille sinon couleur du mur
+            a voir si utile  */
+        .backg { 
+            fill: #FFEBCD;
+        }
+    </style>
+
+    <rect x="0" y="0" width="50" height="50" class="backg"/>
+
+    <!-- INVADER CONTOUR -->
+    <rect x="30" y="0" class="tile baround"/>
+    <rect x="45" y="0" class="tile baround"/>
+    <rect x="30" y="5" class="tile baround"/>
+    <rect x="35" y="5" class="tile baround"/>
+    <rect x="40" y="5" class="tile baround"/>
+    <rect x="45" y="5" class="tile baround"/>    
+    <rect x="10" y="10" class="tile baround"/>
+    <rect x="15" y="10" class="tile baround"/>
+    <rect x="25" y="10" class="tile baround"/>
+    <rect x="20" y="15" class="tile baround"/>
+    <rect x="10" y="15" class="tile baround"/>
+    <rect x="15" y="20" class="tile baround"/>
+    <rect x="20" y="25" class="tile baround"/>
+    <rect x="15" y="30" class="tile baround"/>
+    <rect x="10" y="35" class="tile baround"/>
+    <rect x="5" y="40" class="tile baround"/>
+    <rect x="5" y="45" class="tile baround"/>
+    <rect x="10" y="45" class="tile baround"/>
+    <rect x="15" y="45" class="tile baround"/>
+    <rect x="20" y="40" class="tile baround"/>
+    <rect x="25" y="35" class="tile baround"/>
+    <rect x="35" y="35" class="tile baround"/>
+    <rect x="40" y="35" class="tile baround"/>
+    <rect x="30" y="40" class="tile baround"/>
+    <rect x="35" y="45" class="tile baround"/>
+    <rect x="40" y="45" class="tile baround"/>
+    <rect x="45" y="40" class="tile baround"/>
+    
+    <!-- INVADER CONTOUR -->
+    <rect x="30" y="10" class="tile bfill"/>
+    <rect x="35" y="10" class="tile bfill"/>
+    <rect x="40" y="10" class="tile bfill"/>
+    <rect x="45" y="10" class="tile bfill"/>
+
+    <rect x="15" y="15" class="tile bfill"/>
+    <rect x="25" y="15" class="tile bfill"/>
+    <rect x="30" y="15" class="tile bfill"/>
+    <rect x="35" y="15" class="tile bfill"/>
+    <rect x="40" y="15" class="tile bfill"/>
+    <rect x="45" y="15" class="tile bfill"/>
+
+    <rect x="20" y="20" class="tile bfill"/>
+    <rect x="25" y="20" class="tile bfill"/>
+    <rect x="35" y="20" class="tile bfill"/>
+    <rect x="40" y="20" class="tile bfill"/>
+
+    <rect x="25" y="25" class="tile bfill"/>
+    <rect x="35" y="25" class="tile bfill"/>
+    <rect x="40" y="25" class="tile bfill"/>
+
+    <rect x="20" y="30" class="tile bfill"/>
+    <rect x="25" y="30" class="tile bfill"/>
+    <rect x="30" y="30" class="tile bfill"/>
+    <rect x="35" y="30" class="tile bfill"/>
+    <rect x="40" y="30" class="tile bfill"/>
+    <rect x="45" y="30" class="tile bfill"/>
+
+    <rect x="15" y="35" class="tile bfill"/>
+    <rect x="20" y="35" class="tile bfill"/>
+    <rect x="30" y="35" class="tile bfill"/>
+    <rect x="45" y="35" class="tile bfill"/>
+
+    <rect x="10" y="40" class="tile bfill"/>
+    <rect x="15" y="40" class="tile bfill"/>
+    <rect x="35" y="40" class="tile bfill"/>
+    <rect x="40" y="40" class="tile bfill"/>
+
+    <!-- YEUX -->
+    <rect x="30" y="20" class="tile eye"/>
+    <rect x="30" y="25" class="tile eye"/>
+    <rect x="45" y="20" class="tile eye"/>
+    <rect x="45" y="25" class="tile eye"/>
+</svg>

@@ -10,6 +10,8 @@
 # dependencies
 /node_modules
 
+/src/assets/images/pict
+
 # profiling files
 chrome-profiler-events*.json
 speed-measure-plugin*.json
@@ -32,7 +34,6 @@ speed-measure-plugin*.json
 .history/*
 
 # misc
-/.sass-cache
 /connect.lock
 /coverage
 /libpeerconnection.log
@@ -47,3 +48,4 @@ Thumbs.db
 
 # Git
 .git-credentials
+

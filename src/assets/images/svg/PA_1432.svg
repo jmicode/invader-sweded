@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000"  viewBox="0 0 100 100">
+    <style>
+        /* un carré de mosaique */
+        .tile { 
+            height: 10px;
+            width: 10px;
+            rx: 0.3;
+            ry: 0.3;
+            stroke: #DEDEDE;
+            stroke-width: 0.2;
+        }
+
+        /* un bout de mur */
+        .wall { 
+            height: 10px;
+            width: 10px; 
+        }
+
+        /* contour du SI*/
+        .baround { fill: #000000; }
+
+        /* couleur du corps du SI */
+        .bfill { fill: #FFFFFF; }
+
+        /* couleur des yeux du SI */
+        .eye { fill: #FF0000; }
+
+        /* couleur du contour du SI */
+        .bgshape { fill: #000000; }
+
+        /* blanc si le SI prend toute la taille sinon couleur du mur
+            a voir si utile  */
+        .backg { fill: #FFEBCD; }
+    </style>
+    <defs>
+        <pattern id="Body">
+            <rect x="0" y="0" class="tile bfill"/>
+        </pattern>
+    </defs>
+    <rect x="0" y="0" width="100" height="100" class="backg"/>
+
+    <!-- INVADER CORPS -->
+    <rect x="30" y="20" width="70" height="70" fill="url(#Body)"/>
+    <rect x="20" y="80" class="tile bfill"/>
+    <rect x="40" y="20" class="wall backg"/>
+    <rect x="30" y="50" class="wall backg"/>
+    <rect x="50" y="80" class="wall backg"/>
+
+    <!-- INVADER CONTOUR -->
+    <rect x="60" y="0" class="tile baround"/>
+    <rect x="90" y="0" class="tile baround"/>
+    <rect x="60" y="10" class="tile baround"/>
+    <rect x="70" y="10" class="tile baround"/>
+    <rect x="80" y="10" class="tile baround"/>
+    <rect x="90" y="10" class="tile baround"/>    
+    <rect x="20" y="20" class="tile baround"/>
+    <rect x="30" y="20" class="tile baround"/>
+    <rect x="50" y="20" class="tile baround"/>
+    <rect x="40" y="30" class="tile baround"/>
+    <rect x="20" y="30" class="tile baround"/>
+    <rect x="30" y="40" class="tile baround"/>
+    <rect x="40" y="50" class="tile baround"/>
+    <rect x="30" y="60" class="tile baround"/>
+    <rect x="20" y="70" class="tile baround"/>
+    <rect x="10" y="80" class="tile baround"/>
+    <rect x="10" y="90" class="tile baround"/>
+    <rect x="20" y="90" class="tile baround"/>
+    <rect x="30" y="90" class="tile baround"/>
+    <rect x="40" y="80" class="tile baround"/>
+    <rect x="50" y="70" class="tile baround"/>
+    <rect x="70" y="70" class="tile baround"/>
+    <rect x="80" y="70" class="tile baround"/>
+    <rect x="60" y="80" class="tile baround"/>
+    <rect x="70" y="90" class="tile baround"/>
+    <rect x="80" y="90" class="tile baround"/>
+    <rect x="90" y="80" class="tile baround"/>
+
+    <!-- YEUX -->
+    <rect x="60" y="40" class="tile eye"/>
+    <rect x="60" y="50" class="tile eye"/>
+    <rect x="90" y="40" class="tile eye"/>
+    <rect x="90" y="50" class="tile eye"/>
+    <script>
+        const nbTileWidthBody = 7;        
+        const nbTileHeightBody = 7;
+
+        function resizePattern(id, width, height) {
+            let pattern = document.getElementById(id);
+            
+            lWidth = document.createAttribute("width");
+            lWidth.value = width;
+            pattern.setAttributeNode(lWidth);
+            
+            lEight = document.createAttribute("height");
+            lEight.value = height;
+            pattern.setAttributeNode(lEight);
+        }
+
+        resizePattern("Body", (1 / nbTileWidthBody), (1 / nbTileHeightBody));
+    </script>
+</svg>
