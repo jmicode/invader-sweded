@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Enregistrer nouvelle Invasion</h2>
+    <form [formGroup]="cityForm" (ngSubmit)="onSaveCity()">
+      <div class="form-group">
+        <label for="code">Code</label>
+        <input type="text" class="form-control" id="code" formControlName="code">
+      </div>
+      <div class="form-group">
+        <label for="city">Nom</label>
+        <input type="text" class="form-control" id="city" formControlName="name">
+      </div>
+      <div class="form-group">
+        <label for="country">Pays</label>
+        <input type="text" class="form-control" id="country" formControlName="country">
+      </div>
+      <div class="form-group">
+        <label for="continent">Continent</label>
+        <input type="text" class="form-control" id="continent" formControlName="continent">
+      </div>
+      <div class="form-group">
+        <label for="firstInvader">Premier invader</label>
+        <input type="text" class="form-control" id="firstInvader" formControlName="firstInvader">
+      </div>
+      <div class="form-group">
+        <label for="nbInvader">Nb invaders</label>
+        <input type="text" class="form-control" id="nbInvader" formControlName="nbInvader">
+      </div>
+      <div class="form-group">
+        <label for="nbLivingInvader">Nb invaders</label>
+        <input type="text" class="form-control" id="nbLivingInvader" formControlName="nbLivingInvader">
+      </div>
+      <button class="btn btn-success" type="submit" [disabled]="cityForm.invalid">Enregistrer</button>
+    </form>
+  </div>
+</div>

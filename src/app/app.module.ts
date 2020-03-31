@@ -13,6 +13,9 @@ import { HeaderComponent } from './pages/header/header.component';
 import { InvadersComponent } from './pages/invaders/invaders.component';
 import { InvaderFormComponent } from './pages/invaders/invader-form/invader-form.component';
 import { InvaderSingleComponent } from './pages/invaders/invader-single/invader-single.component';
+import { CitiesComponent } from './pages/cities/cities.component';
+import { CityFormComponent } from './pages/cities/city-form/city-form.component';
+import { CitySingleComponent } from './pages/cities/city-single/city-single.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { InvaderSingleComponent } from './pages/invaders/invader-single/invader-
     HeaderComponent,
     InvadersComponent,
     InvaderFormComponent,
-    InvaderSingleComponent
+    InvaderSingleComponent,
+    CitiesComponent,
+    CityFormComponent,
+    CitySingleComponent
   ],
   imports: [
     BrowserModule,

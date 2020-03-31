@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-12">
+      <h2>Nos villes envahies</h2>
+      <div class="list-group">
+          <button class="list-group-item"
+                  *ngFor="let city of cities; let i = index"
+                  (click)="onViewCity(i)">
+              <h3 class="list-group-item-heading">
+                  {{ city.code }} - {{ city.name }}
+                  <button class="btn btn-default pull-right" (click)="onDeleteCity(city)">
+                      <span class="glyphicon glyphicon-minus"></span>
+                  </button>
+              </h3>
+              <p class="list-group-item-text">{{ city.country }}</p>
+              <p class="list-group-item-text">{{ city.continent }}</p>
+          </button>
+      </div>
+      <button class="btn btn-primary" (click)="onNewCity()">Nouvelle invasion</button>
+  </div>
+</div>

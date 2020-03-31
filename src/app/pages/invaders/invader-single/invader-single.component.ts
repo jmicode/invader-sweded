@@ -27,6 +27,4 @@ export class InvaderSingleComponent implements OnInit {
   onBack() {
     this.router.navigate(['/invaders']);
   }
-
-
 }

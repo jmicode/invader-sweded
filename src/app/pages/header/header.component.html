@@ -5,6 +5,11 @@
               <a routerLink="invaders">Invaders</a>
           </li>
       </ul>
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active">
+            <a routerLink="cities">Cities</a>
+        </li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
           <li routerLinkActive="active" *ngIf="!isAuth">
               <a routerLink="auth/signin">Se connecter</a>
