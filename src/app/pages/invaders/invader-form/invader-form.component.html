@@ -1,16 +1,30 @@
+
 <div class="row">
   <div class="col-xs-12">
       <h2>Enregistrer nouvel Invader</h2>
-      <form [formGroup]="invaderForm" (ngSubmit)="onSaveInvader()">
+      <form [formGroup]="invaderForm" (ngSubmit)="onSaveInvader()" *ngIf="cities">
+        <div class="form-group">
+          <label for="city">City</label>
+          <div>
+            <mat-form-field  class="example-full-width">
+              <mat-select id="city" formControlName="city" (selectionChange)="onCityChange($event)" [disableOptionCentering]="true">
+                <mat-option *ngFor="let city of cities" [value]="city">
+                  {{ city.code }} - {{ city.name }} ({{ city.country }})
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
           <div class="form-group">
               <label for="code">Code</label>
               <input type="text" class="form-control" id="code" formControlName="code">
           </div>
+
           <div class="form-group">
-              <label for="city">City</label>
-              <input type="text" class="form-control" id="city" formControlName="city">
+            <button class="btn btn-success" type="submit" [disabled]="invaderForm.invalid">Enregistrer</button>
           </div>
-          <button class="btn btn-success" type="submit" [disabled]="invaderForm.invalid">Enregistrer</button>
+
       </form>
   </div>
 </div>

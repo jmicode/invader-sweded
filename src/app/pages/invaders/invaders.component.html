@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-xs-12">
       <h2>vos invaders</h2>
-      <div class="list-group">
+      <div class="list-group" *ngIf="cities">
           <button class="list-group-item"
                   *ngFor="let invader of invaders; let i = index"
                   (click)="onViewInvader(i)">
@@ -12,7 +12,7 @@
                   </button>
               </h3>
               <img src="assets/images/pict/{{ invader.code }}-grosplan.png">
-              <p class="list-group-item-text">{{ invader.city }}</p>
+              <p class="list-group-item-text">{{ invader.city }} - {{ cities[invader.city].name }} ({{ cities[invader.city].country }})</p>
           </button>
       </div>
       <button class="btn btn-primary" (click)="onNewInvader()">Nouveau invader</button>

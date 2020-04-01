@@ -42,5 +42,4 @@ export class CitiesComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.citiesSubscription.unsubscribe();
   }
-
 }
