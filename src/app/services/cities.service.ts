@@ -49,7 +49,6 @@ export class CitiesService {
   }
 
   createNewCity(city: City) {
-    console.log(city);
     this.cities.push(city);
     this.saveCities();
     this.emitCities();

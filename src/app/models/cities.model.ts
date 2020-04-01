@@ -6,5 +6,6 @@ export class City {
   public scoreInvader: number;
   public scoreLivingInvader: number;
   public yearFirstInvasion: number;
+  public flag: string;
   constructor( public code: string, public name: string, public country: string, public continent: string) { }
 }

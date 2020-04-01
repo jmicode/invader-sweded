@@ -30,7 +30,24 @@
         <label for="nbLivingInvader">Nb invaders</label>
         <input type="text" class="form-control" id="nbLivingInvader" formControlName="nbLivingInvader">
       </div>
+      <div class="form-group">
+        <label for="nbWaves">Nb vagues</label>
+        <input type="text" class="form-control" id="nbWaves" formControlName="nbWaves">
+      </div>
+      <div class="form-group">
+        <label for="scoreInvader">Score invaders</label>
+        <input type="text" class="form-control" id="scoreInvader" formControlName="scoreInvader">
+      </div>
+      <div class="form-group">
+        <label for="scoreLivingInvader">Score invaders vivants</label>
+        <input type="text" class="form-control" id="scoreLivingInvader" formControlName="scoreLivingInvader">
+      </div>
+      <div class="form-group">
+        <label for="yearFirstInvasion">Année de la première invasion</label>
+        <input type="text" class="form-control" id="yearFirstInvasion" formControlName="yearFirstInvasion">
+      </div>
       <button class="btn btn-success" type="submit" [disabled]="cityForm.invalid">Enregistrer</button>
+      <button class="btn btn-success" type="button" (click)="onLoadCities()" >Chargement...</button>
     </form>
   </div>
 </div>
