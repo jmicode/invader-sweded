@@ -18,6 +18,7 @@ import { InvaderSingleComponent } from './pages/invaders/invader-single/invader-
 import { CitiesComponent } from './pages/cities/cities.component';
 import { CityFormComponent } from './pages/cities/city-form/city-form.component';
 import { CitySingleComponent } from './pages/cities/city-single/city-single.component';
+import { LoadersComponent } from './pages/loaders/loaders.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CitySingleComponent } from './pages/cities/city-single/city-single.comp
     InvaderSingleComponent,
     CitiesComponent,
     CityFormComponent,
-    CitySingleComponent
+    CitySingleComponent,
+    LoadersComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { CitySingleComponent } from './pages/cities/city-single/city-single.comp
 import { CityFormComponent } from './pages/cities/city-form/city-form.component';
 
 import { AuthGuardService } from './services/auth-guard.service';
+import { LoadersComponent } from './pages/loaders/loaders.component';
 
 const routes: Routes = [
   { path: 'auth/signup', component: SignupComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'cities', canActivate: [AuthGuardService], component: CitiesComponent },
   { path: 'cities/view/:id', canActivate: [AuthGuardService], component: CitySingleComponent },
   { path: 'cities/new', canActivate: [AuthGuardService], component: CityFormComponent },
+  { path: 'loaders', canActivate: [AuthGuardService], component: LoadersComponent },
   { path: '', redirectTo: 'invaders', pathMatch: 'full' },
   { path: '**', redirectTo: 'invaders' },
 ];

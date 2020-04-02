@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { City } from 'src/app/models/cities.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CitiesService } from 'src/app/services/cities.service';
-import CitiesJson from 'src/assets/cities.json';
 
 @Component({
   selector: 'app-city-form',
@@ -70,22 +69,5 @@ export class CityFormComponent implements OnInit {
     this.router.navigate(['/cities']);
   }
 
-  onLoadCities() {
 
-    CitiesJson.forEach(jsonCity => {
-      const city = new City(jsonCity.Prefixe, jsonCity.Ville, jsonCity.Pays, jsonCity.Continent);
-
-      city.firstInvader = 1;
-      city.nbInvader = jsonCity.Invaders;
-      city.nbLivingInvader = jsonCity.Invaders;
-      city.nbWaves = jsonCity.Waves;
-      city.scoreInvader = jsonCity.Score;
-      city.scoreLivingInvader = jsonCity.Score;
-      city.yearFirstInvasion = jsonCity.Annee;
-      city.flag = jsonCity.Flag;
-
-      //this.citiesService.createNewCity(city);
-       console.log("bonjour", city);
-    });
-  }
 }
