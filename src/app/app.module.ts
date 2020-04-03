@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -20,8 +21,8 @@ import { CityFormComponent } from './pages/cities/city-form/city-form.component'
 import { CitySingleComponent } from './pages/cities/city-single/city-single.component';
 import { LoadersComponent } from './pages/loaders/loaders.component';
 
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { InvadersPipe } from './pipes/invaders.pipe';
+import { CitiesPipe } from './pipes/cities.pipe';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { InvadersPipe } from './pipes/invaders.pipe';
     CityFormComponent,
     CitySingleComponent,
     LoadersComponent,
-    InvadersPipe
+    InvadersPipe,
+    CitiesPipe
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,7 @@ import { InvadersPipe } from './pipes/invaders.pipe';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatSelectModule,
-    Ng2SearchPipeModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

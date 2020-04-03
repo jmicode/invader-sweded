@@ -1,20 +1,16 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'InvadersFilter'
+  name: 'CitiesFilter'
 })
-export class InvadersPipe implements PipeTransform {
+export class CitiesPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-
     if (!value) {
       return null;
     }
     if (!args) {
-      return null;
-    }
-    if (args.length < 2) {
-      return null;
+      return value;
     }
 
     args = args.toLowerCase();
@@ -23,5 +19,4 @@ export class InvadersPipe implements PipeTransform {
         return JSON.stringify(item).toLowerCase().includes(args);
     });
   }
-
 }

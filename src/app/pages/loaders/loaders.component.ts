@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 import { City } from 'src/app/models/cities.model';
 
 import { CitiesService } from 'src/app/services/cities.service';
 import { InvadersService } from 'src/app/services/invaders.service';
 
-import CitiesJson from 'src/assets/cities.json';
-import InvadersJson from 'src/assets/invaders.json';
+// import CitiesJson from 'src/assets/cities.json';
+// import InvadersJson from 'src/assets/invaders.json';
 import { createAotUrlResolver } from '@angular/compiler';
 import { Invader } from 'src/app/models/invaders.model';
 
@@ -15,14 +15,30 @@ import { Invader } from 'src/app/models/invaders.model';
   templateUrl: './loaders.component.html',
   styleUrls: ['./loaders.component.scss']
 })
-export class LoadersComponent {
+export class LoadersComponent implements OnInit {
+
+  cities: any;
+  invaders: any;
 
   constructor(private citiesService: CitiesService,
-              private invadersService: InvadersService) { }
+              private invadersService: InvadersService,
+              private httpClient: HttpClient) { }
+
+  ngOnInit() {
+    this.httpClient.get('assets/cities.json').subscribe(data => {
+      console.log(data);
+      this.cities = data;
+    });
+
+    this.httpClient.get('assets/invaders.json').subscribe(data => {
+      console.log(data);
+      this.invaders = data;
+    });
+  }
 
   onLoadCities() {
 
-    CitiesJson.forEach(jsonCity => {
+    this.cities.forEach(jsonCity => {
       const city = new City(jsonCity.Prefixe, jsonCity.Ville, jsonCity.Pays, jsonCity.Continent);
 
       city.firstInvader = 1;
@@ -34,14 +50,15 @@ export class LoadersComponent {
       city.yearFirstInvasion = jsonCity.Annee;
       city.flag = jsonCity.Flag;
 
-      this.citiesService.createNewCity(city);
+      //this.citiesService.createNewCity(city);
+      console.log("bonjour", city);
     });
     alert("Import Cities done !")
   }
 
   onLoadInvaders() {
 
-    InvadersJson.forEach(jsonInvader => {
+    this.invaders.forEach(jsonInvader => {
       const city = jsonInvader.id.split('_')[0];
       const invader = new Invader(jsonInvader.id, city);
 
@@ -51,7 +68,7 @@ export class LoadersComponent {
       invader.arrondissement = jsonInvader.arrondissement+'';
       invader.lastReport = jsonInvader.lastReport;
 
-      this.invadersService.createNewInvader(invader);
+      //this.invadersService.createNewInvader(invader);
 
       console.log("bonjour", invader);
     });
