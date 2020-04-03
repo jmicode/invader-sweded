@@ -1,9 +1,12 @@
 <div class="row">
   <div class="col-xs-12">
       <h2>vos invaders</h2>
+      <div>
+        <input type="text" [(ngModel)]="searchBox">
+      </div>
       <div class="list-group" *ngIf="cities">
           <button class="list-group-item"
-                  *ngFor="let invader of invaders; let i = index"
+                  *ngFor="let invader of invaders | InvadersFilter: searchBox ; let i = index"
                   (click)="onViewInvader(i)">
               <h3 class="list-group-item-heading">
                   {{ invader.code}}

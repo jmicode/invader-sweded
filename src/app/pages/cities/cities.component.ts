@@ -13,6 +13,7 @@ export class CitiesComponent implements OnInit, OnDestroy {
 
   cities: City[];
   citiesSubscription: Subscription;
+  searchBox: string;
 
   constructor(private citiesService: CitiesService,
               private router: Router) { }

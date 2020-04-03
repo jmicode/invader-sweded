@@ -17,6 +17,7 @@ export class InvadersComponent implements OnInit, OnDestroy {
   invadersSubscription: Subscription;
   cities: City[];
   citiesSubscription: Subscription;
+  searchBox: string;
 
   constructor(private invaderService: InvadersService,
               private router: Router,

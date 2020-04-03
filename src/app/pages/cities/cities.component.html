@@ -1,9 +1,14 @@
 <div class="row">
   <div class="col-xs-12">
       <h2>Nos villes envahies</h2>
+
+      <div>
+        <input type="text" [(ngModel)]="searchBox">
+      </div>
+
       <div class="list-group">
           <button class="list-group-item"
-                  *ngFor="let city of cities; let i = index"
+                  *ngFor="let city of cities | filter: searchBox; let i = index"
                   (click)="onViewCity(i)">
               <h3 class="list-group-item-heading">
                   {{ city.code }} - {{ city.name }}
