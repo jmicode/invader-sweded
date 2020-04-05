@@ -6,5 +6,6 @@ export class Invader {
     status: string;
     arrondissement: string;
     lastReport: string;
+    fullCity: City;
     constructor(public code: string, public city: string) { }
 }

@@ -19,7 +19,7 @@ export class InvadersPipe implements PipeTransform {
 
     args = args.toLowerCase();
 
-    return value.filter(function(item){
+    return value.filter(function(item) {
         return JSON.stringify(item).toLowerCase().includes(args);
     });
   }

@@ -5,6 +5,8 @@
         <input type="text" [(ngModel)]="searchBox">
       </div>
       <div class="list-group" *ngIf="cities">
+
+
           <button class="list-group-item"
                   *ngFor="let invader of invaders | InvadersFilter: searchBox ; let i = index"
                   (click)="onViewInvader(i)">
@@ -15,7 +17,9 @@
                   </button>
               </h3>
               <img src="assets/images/pict/{{ invader.code }}-grosplan.png">
-              <p class="list-group-item-text">{{ invader.city }} - {{ cities[invader.city].name }} ({{ cities[invader.city].country }})</p>
+              <img src="assets/images/flag/{{ invader.fullCity.flag }}.svg" type="image/svg+xml" height="180px" width="240px">
+              <p class="list-group-item-text">{{ invader.fullCity.code }} - {{ invader.fullCity.name }} ({{ invader.fullCity.country }})</p>
+              <pre>{{invader|json}}</pre>
           </button>
       </div>
       <button class="btn btn-primary" (click)="onNewInvader()">Nouveau invader</button>

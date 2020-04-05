@@ -29,6 +29,7 @@ export class InvaderSingleComponent implements OnInit {
     const id = this.route.snapshot.params['id'];
     this.invadersService.getSingleInvader(+id).then(
       (invader: Invader) => {
+        invader.fullCity = this.cities[invader.city];
         this.invader = invader;
       }
     );

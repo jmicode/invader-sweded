@@ -5,6 +5,7 @@ import { InvadersService } from '../../services/invaders.service';
 import { Router } from '@angular/router';
 import { City } from 'src/app/models/cities.model';
 import { CitiesService } from 'src/app/services/cities.service';
+import { InvadersCitiesService } from 'src/app/services/invaders-cities.service';
 
 @Component({
   selector: 'app-invaders',
@@ -17,11 +18,15 @@ export class InvadersComponent implements OnInit, OnDestroy {
   invadersSubscription: Subscription;
   cities: City[];
   citiesSubscription: Subscription;
+  invadersCities: [];
+  invadersCitiesSubscription: Subscription;
+
   searchBox: string;
 
   constructor(private invaderService: InvadersService,
               private router: Router,
-              private citiesService: CitiesService) { }
+              private citiesService: CitiesService,
+              private invadersCitiesService: InvadersCitiesService) { }
 
   ngOnInit() {
     this.initCities();
@@ -45,6 +50,10 @@ export class InvadersComponent implements OnInit, OnDestroy {
   initInvaders() {
     this.invadersSubscription = this.invaderService.invadersSubject.subscribe(
       (invaders: Invader[]) => {
+        invaders.forEach(invader => {
+          invader.fullCity = this.cities[invader.city];
+        });
+
         this.invaders = invaders;
       }
     );
