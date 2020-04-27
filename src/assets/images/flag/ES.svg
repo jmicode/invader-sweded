@@ -15,16 +15,14 @@
         }
 
         .backg { fill: var(--mastic-color); }
-        .bblue { fill: #0055A4; }
         .bwhite { fill: #FFFFFF; }
-        .bred { fill: #EF4135; }
+        .bred { fill: #AA151B; }
+        .byellow {fill: #F1BF00}
+        .borange {fill: #FF8F35}
     </style>
     <defs>
-        <pattern id="Blue">
-            <rect x="0" y="0" class="tile bblue"/>
-        </pattern>
-        <pattern id="White">
-            <rect x="0" y="0" class="tile bwhite"/>
+        <pattern id="Yellow">
+            <rect x="0" y="0" class="tile byellow"/>
         </pattern>
         <pattern id="Red">
             <rect x="0" y="0" class="tile bred"/>
@@ -33,13 +31,22 @@
     <rect x="0" y="0" width="120" height="90" class="backg"/>
 
     <!-- FOND -->
-    <rect x="0" y="0" width="40" height="90" fill="url(#Blue)"/>
-    <rect x="40" y="0" width="40" height="90" fill="url(#White)"/>
-    <rect x="80" y="0" width="40" height="90" fill="url(#Red)"/>
+    <rect x="0" y="0" width="120" height="20" fill="url(#Red)"/>
+    <rect x="0" y="20" width="120" height="50" fill="url(#Yellow)"/>
+    <rect x="0" y="70" width="120" height="20" fill="url(#Red)"/>
+
+    <rect x="30" y="30" width="10" height="10" class="borange"/>
+    <rect x="30" y="40" width="10" height="10" class="bred"/>
+    <rect x="30" y="50" width="10" height="10" class="borange"/>
+    <rect x="40" y="30" width="10" height="10" class="borange"/>
+
+    <rect x="40" y="40" width="10" height="10" class="bwhite"/>
+    <rect x="40" y="50" width="10" height="10" class="bred"/>
 
     <script type="text/javascript">
-        const nbTileWidth = 4;
-        const nbTileHeightColor = 9;
+        const nbTileWidth = 12;
+        const nbTileHeightRedColor = 2;
+        const nbTileHeightYellowColor = 5;
 
         function resizePattern(id, width, height) {
             let pattern = document.getElementById(id);
@@ -53,8 +60,7 @@
             pattern.setAttributeNode(lEight);
         }
 
-        resizePattern("Blue", (1 / nbTileWidth), (1 / nbTileHeightColor));
-        resizePattern("White", (1 / nbTileWidth), (1 / nbTileHeightColor));
-        resizePattern("Red", (1 / nbTileWidth), (1 / nbTileHeightColor));
+        resizePattern("Red", (1 / nbTileWidth), (1 / nbTileHeightRedColor));
+        resizePattern("Yellow", (1 / nbTileWidth), (1 / nbTileHeightYellowColor));
     </script>
 </svg>

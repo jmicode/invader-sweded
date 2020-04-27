@@ -23,6 +23,7 @@ import { LoadersComponent } from './pages/loaders/loaders.component';
 
 import { InvadersPipe } from './pipes/invaders.pipe';
 import { CitiesPipe } from './pipes/cities.pipe';
+import { FlagsPipe } from './pipes/flags.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CitiesPipe } from './pipes/cities.pipe';
     CitySingleComponent,
     LoadersComponent,
     InvadersPipe,
-    CitiesPipe
+    CitiesPipe,
+    FlagsPipe
   ],
   imports: [
     BrowserModule,

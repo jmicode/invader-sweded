@@ -28,6 +28,10 @@ export class CitiesComponent implements OnInit, OnDestroy {
     this.citiesService.emitCities();
   }
 
+  getFlagUrl(city: City) {
+    return 'http://localhost:4200/assets/images/flag/' + city.flag + '.svg';
+  }
+
   onNewCity() {
     this.router.navigate(['/cities', 'new']);
   }

@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  web:
+    image: node:latest
+    volumes:
+      - .:/usr/app
+    ports:
+      - '15000:4200'
+# package.json --host pour "start": "ng serve --host 0.0.0.0",
+    working_dir: /usr/app
+    command: npm start

@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  baseUrl: "http://localhost:4200/",
   firebaseConfig: {
     apiKey: "AIzaSyAsU6R5NJVUAajt5JfTUx0z2ztpp9HjCy0",
     authDomain: "invader-db-478fa.firebaseapp.com",

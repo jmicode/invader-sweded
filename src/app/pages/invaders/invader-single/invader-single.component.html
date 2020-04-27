@@ -3,8 +3,11 @@
     <!-- <pre>{{invader|json}}</pre> -->
       <h1>{{ invader.code }}</h1>
       <h2>{{ invader.fullCity.name }} ({{ invader.fullCity.country }})</h2>
-      <embed src="assets/images/flag/{{ invader.fullCity.flag }}.svg" type="image/svg+xml">
+      <h3>{{ url }}</h3>
       <img src="assets/images/pict/{{ invader.code }}-grosplan.png">
+      <div style="border: 1px solid #FF33CC;"><iframe [src]="url | FlagsSafe: 'resourceUrl'" style="border: 1px solid #FF33CC;"></iframe></div>
+
+      <!-- <object [data]="getFlagUrl()" width="64" height="48" style="border:1;"></object> -->
   </div>
   <div class="button btn btn-default" (click)="onBack()">Retour</div>
 </div>
